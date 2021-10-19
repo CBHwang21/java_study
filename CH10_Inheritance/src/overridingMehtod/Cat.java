@@ -1,4 +1,4 @@
-package overridingNehtod;
+package overridingMehtod;
 
 public class Cat {
 	// 고양이는 야옹이라고 울고 사냥할 수 있나.

@@ -23,7 +23,8 @@ public class App {
 			int x = add(1,1);
 			System.out.println(x);
 
-	}
+		}
 	private static int add(int a, int b);
 		return a+b;
+	}
 }

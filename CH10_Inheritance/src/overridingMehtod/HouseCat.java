@@ -1,4 +1,4 @@
-package overridingNehtod;
+package overridingMehtod;
 
 public class HouseCat {
 
@@ -6,6 +6,11 @@ public class HouseCat {
 	public void vocal() {
 			System.out.println("¹Ì¾ß¿ì~");
 		}
+
+	public void hunt() {
+		// TODO Auto-generated method stub
+		
+	}
 	}
 
 

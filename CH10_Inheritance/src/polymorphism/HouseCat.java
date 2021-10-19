@@ -7,10 +7,6 @@ public class HouseCat {
 			System.out.println("미야우~");
 		}
 	
-	//집고양이의 메소드
-	public void call() {
-		System.out.println("집사를 부릅니다~");
-	}
 	}
 
 

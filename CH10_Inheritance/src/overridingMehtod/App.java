@@ -1,4 +1,4 @@
-package overridingNehtod;
+package overridingMehtod;
 
 public class App {
 
