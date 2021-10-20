@@ -6,26 +6,28 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-class Alert extends TimerTask {
+class Alert2 extends TimerTask {
 	@Override
 	public void run() {
-		System.out.println("Çï·Î¿ì");
+		System.out.println("Çï·Î¿ì!");
 	}
 }
-class Task implements Runnable{
-		@Override
-		public void run() {
-			System.out.println("ÇÏÀÌ!");		
-		}
 
-public class App {
+class Task2 implements Runnable{
+	@Override
+	public void run() {
+		System.out.println("ÇÏÀÌ!");		
+	}	
+}
+
+public class App2 {
 
 	public static void main(String[] args) {
 		Timer timer = new Timer();
-		timer.scheduleAtFixedRate(new Alert(), 0, 1000);
-		
+		timer.scheduleAtFixedRate(new Alert2(), 0, 1000);
+
 		ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-		executor.scheduleAtFixedRate(new Task(), 0, 1, TimeUnit.SECONDS);
+		executor.scheduleAtFixedRate(new Task2(), 0, 1, TimeUnit.SECONDS);
 	}
 
 }
