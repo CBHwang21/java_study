@@ -20,7 +20,7 @@ public class App implements Runnable{
 			}
 		});
 		
-		// 3 메소드 이너클래스
+		// 3 이너클래스
 		class Runner1 implements Runnable {
 			public void run() {
 				System.out.println(name);
@@ -28,7 +28,7 @@ public class App implements Runnable{
 		}
 		activate(new Runner1());
 	}
-	public void activate(Runnable runnable) {
+	public void activate(Runnable runnable) {	// Runnable 인터페이스 매개변수
 		runnable.run();
 	}
 
