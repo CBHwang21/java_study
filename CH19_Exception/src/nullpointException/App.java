@@ -12,17 +12,17 @@ public class App {
 		} catch (ArithmeticException e) {
 			System.out.println("0으로 나눌수 없습니다.");
 		}
-	}
 	
-	// 2. 객체의 주소값이 null일때!!!
-	Scanner scanner = null;	//	new Scanner(System.in);
 	
-	try {
-		sacnner.nextLine();
-		scanner.close();
-	} catch (nullpointException e) {
-		System.out.println("객체의 값이 null입니다.");
-	}
+		// 2. 객체의 주소값이 null일때!!!
+		Scanner scanner = null;	//	new Scanner(System.in);
+		
+		try {
+			scanner.nextLine();
+			scanner.close();
+		} catch (NullPointerException e) {
+			System.out.println("객체의 값이 null입니다.");
+		}
 	
 	}
 }
