@@ -1,20 +1,42 @@
-package application;
+package gui;
 
 import javax.swing.*;
+import model.World;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.*;
 
 public class GamePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	private final static int CELLSIZE = 50;	// 격자의 크기설정
+	private final static int CELLSIZE = 100;	// 격자의 크기설정
 	private final static Color backgroundColor = Color.BLACK;	// 배경색 검은색
 	private final static Color gridColor = Color.GRAY;	// 격자선색 회색
 	
 	private int topBottomMargin;	// 위 아래 마진
 	private int leftRightMargin;	// 왼쪽 오른쪽 마진
+	private World world;			// 월드 선언
 	
 	public GamePanel() {
-		//setBackground(Color.BLUE);	// 게임패널 생성시 색을 파란색으로
+		// 게임패널을 생성시에 이벤트중(마우스 이벤트 추가)
+		addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				
+				if(e.getY() < topBottomMargin || e.getX() < leftRightMargin) {
+					return;	// 벗어난 값이기 때문에 그냥 리턴(작은값)
+				}
+				
+				int row = (e.getY() - topBottomMargin) / CELLSIZE;
+				int col = (e.getX() - leftRightMargin) / CELLSIZE;
+				
+				if(row >= world.getRows() || col >= world.getColumns()) {
+					return;	// 벗어난 값이기 때문에 그냥 리턴
+				}
+				boolean status = world.getCell(row, col);	
+				world.setCell(row,col,!status);	// 현재 녹색인지 체크해서 반전
+				repaint();	// 새로고침(게임패널을 새로시작)
+			}
+		});
 	}
 
 	@Override
@@ -24,20 +46,33 @@ public class GamePanel extends JPanel {
 		
 		int width = getWidth();		// 가로길이
 		int height = getHeight();	// 세로길이
-		
-//		System.out.println(width);
-//		System.out.println(height);
+						
 		leftRightMargin = ((width % CELLSIZE) + CELLSIZE) / 2;
 		topBottomMargin = ((height % CELLSIZE) + CELLSIZE) / 2;
 		
+		int rows = (height - 2*topBottomMargin) / CELLSIZE;
+		int cols = (width - 2*leftRightMargin) / CELLSIZE;
+		
+//		System.out.println(rows);
+//		System.out.println(cols);
+		
+		if(world == null) {	// 아직 world가 생성되지 않았으면 새로 생성
+			world = new World(rows, cols);
+		}
+		
+		//world.setCell(0, 0, true);	// grid 이중배열에 좌표(줄, 열) 값을 true로 set
+				
 		g2.setColor(backgroundColor);	// 색 설정
 		g2.fillRect(0, 0, width, height);	// 사각형의 좌표에 색을 칠함
-		
 		drawGrid(g2, width, height);	// 줄을 긋는 메소드
 		
-		fillCell(g2, 0, 0, true);
-		fillCell(g2, 0, 2, true);
-		fillCell(g2, 3, 4, true);
+		// 전체 그리드 배열에서 현재 값으로 색을 넣는다.
+		for(int col=0; col<cols; col++) {
+			for(int row=0; row<rows; row++) {
+				boolean status = world.getCell(row, col);
+				fillCell(g2, row, col, status);
+			}
+		}
 		
 	}
 	
