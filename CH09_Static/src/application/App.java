@@ -4,21 +4,21 @@ public class App {
 
 	public static void main(String[] args) {
 				
-		// °í¾çÀÌ Å¬·¡½º ºÒ·¯¿À±â
-		Cat cat1 = new Cat("¸¶Æ¿´Ù");
-		Cat cat2 = new Cat("¶óÀÌ¾ğ");
+		// ê³ ì–‘ì´ í´ë˜ìŠ¤ ë¶ˆëŸ¬ì˜¤ê¸°
+		Cat cat1 = new Cat("ë§ˆí‹¸ë‹¤");
+		Cat cat2 = new Cat("ë¼ì´ì–¸");
 				
 		System.out.println(cat1);
 		System.out.println(cat2);
 		
-		// ½ºÅÂÆ½ º¯¼ö´Â °´Ã¼¿Í »ó°ü¾øÀÌ Å¬·¡½º¸í.º¯¼ö ·Î »ç¿ëÇÑ´Ù. °´Ã¼ »ı¼ºÇÒ ÇÊ¿ä¾øÀ½
+		// ìŠ¤íƒœí‹± ë³€ìˆ˜ëŠ” ê°ì²´ì™€ ìƒê´€ì—†ì´ í´ë˜ìŠ¤ëª….ë³€ìˆ˜ ë¡œ ì‚¬ìš©í•œë‹¤. ê°ì²´ ìƒì„±í•  í•„ìš”ì—†ìŒ
 		System.out.println(Cat.FOOD);
 		System.out.println(Math.PI);
 		
 		System.out.println(cat1.getCount());
 		System.out.println(cat2.getCount());
 		
-		Cat cat3 = new Cat("¿ï¹ö¸°");	// count++
+		Cat cat3 = new Cat("ìš¸ë²„ë¦°");	// count++
 		System.out.println(cat3.getCount());
 		
 

@@ -1,8 +1,8 @@
 package inheritance;
 
-// ºÎ¸ğÅ¬·¡½º(½´ÆÛÅ¬·¡½º)¸¦ ÀÚ½Ä(subÅ¬·¡½º)Å¬·¡½º°¡ »ó¼Ó¹Ş´Â´Ù.
+// ë¶€ëª¨í´ë˜ìŠ¤(ìŠˆí¼í´ë˜ìŠ¤)ë¥¼ ìì‹(subí´ë˜ìŠ¤)í´ë˜ìŠ¤ê°€ ìƒì†ë°›ëŠ”ë‹¤.
 public class Animal {
 	public void eat() {
-		System.out.println("¸Ô´Âµå¾Æ...");
+		System.out.println("ë¨¹ëŠ”ë“œì•„...");
 	}
 }

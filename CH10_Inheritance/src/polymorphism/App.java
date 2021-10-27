@@ -3,7 +3,7 @@ package polymorphism;
 public class App {
 
 	public static void main(String[] args) {
-		// °´Ã¼¸¦ »ó¼Ó¹ŞÀº CatÅ¸ÀÔÀ¸·Î ¼±¾ğ
+		// ê°ì²´ë¥¼ ìƒì†ë°›ì€ Catíƒ€ì…ìœ¼ë¡œ ì„ ì–¸
 //		Cat cat1 = new HouseCat();
 //		cat1.vocal();
 //		cat1.hunt();
@@ -29,7 +29,7 @@ public class App {
 //		cats[2].vocal();
 //		cats[2].hunt();
 
-		// ¹İº¹¹®
+		// ë°˜ë³µë¬¸
 		for(int i=0; i<cats.length; i++) {
 			cats[i].vocal();
 			cats[i].hunt();
@@ -41,16 +41,16 @@ public class App {
 			c.hunt();
 		}
 		
-		// Çüº¯È¯ casting
-		// ±âº»Å¸ÀÔ
+		// í˜•ë³€í™˜ casting
+		// ê¸°ë³¸íƒ€ì…
 		//int a = 1.2345;
 		int b = (int)1.2345;
 		System.out.println(b);
 		
-		// ÂüÁ¶Å¸ÀÔ : ±âº»À» Á¦¿ÜÇÑ Å¬·¡½º Å¸ÀÔ µî
-		Cat cat1 = new HouseCat();	// ¾÷Ä³½ºÆÃ
+		// ì°¸ì¡°íƒ€ì… : ê¸°ë³¸ì„ ì œì™¸í•œ í´ë˜ìŠ¤ íƒ€ì… ë“±
+		Cat cat1 = new HouseCat();	// ì—…ìºìŠ¤íŒ…
 		
-		// ´Ù¿îÄ³½ºÆÃ (Å¸ÀÔÀ» ´Ù½Ã ÇÏÀ§ Å¬·¡½º·Î º¯È¯) : (ÇÏÀ§Å¬·¡½º) Àû´Â´Ù.
+		// ë‹¤ìš´ìºìŠ¤íŒ… (íƒ€ì…ì„ ë‹¤ì‹œ í•˜ìœ„ í´ë˜ìŠ¤ë¡œ ë³€í™˜) : (í•˜ìœ„í´ë˜ìŠ¤) ì ëŠ”ë‹¤.
 		HouseCat cat2 = (HouseCat)cat1;
 		
 		

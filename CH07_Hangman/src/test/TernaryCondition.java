@@ -3,7 +3,7 @@ package test;
 public class TernaryCondition {
 
 	public static void main(String[] args) {
-		// »óÈ² Á¶°Ç ¿¬»êÀÚ : Á¶°Ç ? A : B
+		// ìƒí™© ì¡°ê±´ ì—°ì‚°ì : ì¡°ê±´ ? A : B
 		System.out.println(true? "yes" : "no");
 		System.out.println(false? "yes" : "no");
 		

@@ -4,7 +4,7 @@ public class Person implements Describable{
 
 	@Override
 	public String getDescribtion() {
-		return "Person �Դϴ�.";
+		return "Person 입니다.";
 	}
 
 }

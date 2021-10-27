@@ -1,8 +1,8 @@
 package inheritance;
 
-// »ó¼Ó Å°¿öµå : extends
+// ìƒì† í‚¤ì›Œë“œ : extends
 public class Bird extends Animal {
 	public void fly() {
-		System.out.println("ÇÏ´ÃÀ» ³³´Ï´Ù...");
+		System.out.println("í•˜ëŠ˜ì„ ë‚©ë‹ˆë‹¤...");
 	}
 }

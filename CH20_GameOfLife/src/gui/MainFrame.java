@@ -9,26 +9,26 @@ public class MainFrame extends JFrame {
 	private GamePanel gamePanel = new GamePanel();
 
 	public MainFrame() {
-		super("Game Of Life"); // Å¸ÀÌÆ²¸í
+		super("Game Of Life"); // íƒ€ì´í‹€ëª…
 
-		setLayout(new BorderLayout()); // ·¹ÀÌ¾Æ¿ô ±¸¿ª¼³Á¤
-		add(gamePanel, BorderLayout.CENTER); // °ÔÀÓ ÆĞ³ÎÀ» °¡¿îµ¥
+		setLayout(new BorderLayout()); // ë ˆì´ì•„ì›ƒ êµ¬ì—­ì„¤ì •
+		add(gamePanel, BorderLayout.CENTER); // ê²Œì„ íŒ¨ë„ì„ ê°€ìš´ë°
 
-		addKeyListener(new KeyAdapter() { // Å° ÀÌº¥Æ®¸¦ ´ë±âÇÏ¸é¼­ ¹ß»ı½Ã ¾Æ·¡ ÄÚµå¸¦ ½ÇÇà
-			public void keyPressed(KeyEvent e) { // Å°º¸µå Å°¸¦ ´­·¶À»¶§
-				// System.out.println("Å° ´­·¶À½!");
-				int code = e.getKeyCode(); // Å°ÀÇ Á¾·ù¸¦ ¼ıÀÚ·Î ÀúÀå
+		addKeyListener(new KeyAdapter() { // í‚¤ ì´ë²¤íŠ¸ë¥¼ ëŒ€ê¸°í•˜ë©´ì„œ ë°œìƒì‹œ ì•„ë˜ ì½”ë“œë¥¼ ì‹¤í–‰
+			public void keyPressed(KeyEvent e) { // í‚¤ë³´ë“œ í‚¤ë¥¼ ëˆŒë €ì„ë•Œ
+				// System.out.println("í‚¤ ëˆŒë €ìŒ!");
+				int code = e.getKeyCode(); // í‚¤ì˜ ì¢…ë¥˜ë¥¼ ìˆ«ìë¡œ ì €ì¥
 				switch (code) {
 				case 32:
-					// System.out.println("½ºÆäÀÌ½º¹Ù");
+					// System.out.println("ìŠ¤í˜ì´ìŠ¤ë°”");
 					gamePanel.next();
 					break;
 				case 8:
-					// System.out.println("¹é ½ºÆäÀÌ½º");
+					// System.out.println("ë°± ìŠ¤í˜ì´ìŠ¤");
 					gamePanel.clear();
 					break;
 				case 10:
-					// System.out.println("¿£ÅÍ");
+					// System.out.println("ì—”í„°");
 					gamePanel.randomize();
 					break;
 				}
@@ -36,8 +36,8 @@ public class MainFrame extends JFrame {
 
 		});
 
-		setSize(1200, 800); // Ã¢»çÀÌÁî
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ã¢À» ´İÀ»¶§ ÇÁ·Î±×·¥ Á¾·á
-		setVisible(true); // º¸ÀÌ°Ô ÇÏ±â
+		setSize(1200, 800); // ì°½ì‚¬ì´ì¦ˆ
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // ì°½ì„ ë‹«ì„ë•Œ í”„ë¡œê·¸ë¨ ì¢…ë£Œ
+		setVisible(true); // ë³´ì´ê²Œ í•˜ê¸°
 	}
 }

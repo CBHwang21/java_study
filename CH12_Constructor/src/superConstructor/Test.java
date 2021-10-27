@@ -3,7 +3,7 @@ package superConstructor;
 public class Test {
 
 	public Test(String name) {
-		super();	// object Å¬·¡½º »ı¼ºÀÚ
+		super();	// object í´ë˜ìŠ¤ ìƒì„±ì
 		
 	}
 	

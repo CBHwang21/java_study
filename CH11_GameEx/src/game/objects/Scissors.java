@@ -1,9 +1,9 @@
 package game.objects;
-// °¡À§
+// ê°€ìœ„
 public class Scissors extends GameObject {
 	public Scissors() {
-		// °¡À§ °´Ã¼ »ı¼º
+		// ê°€ìœ„ ê°ì²´ ìƒì„±
 		setId(0);
-		setName("°¡À§");
+		setName("ê°€ìœ„");
 	}
 }

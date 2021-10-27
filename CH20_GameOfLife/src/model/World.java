@@ -3,65 +3,65 @@ package model;
 import java.util.Random;
 
 public class World {
-	private int rows; // ÁÙ
-	private int columns; // ¿­
+	private int rows; // ì¤„
+	private int columns; // ì—´
 
-	private boolean[][] grid; // ºÒ¸° ÀÌÁß¹è¿­
-	private boolean[][] buffer; // ¹öÆÛ ÀÓ½Ã¹è¿­
+	private boolean[][] grid; // ë¶ˆë¦° ì´ì¤‘ë°°ì—´
+	private boolean[][] buffer; // ë²„í¼ ì„ì‹œë°°ì—´
 
-	public World(int rows, int columns) { // ¿ùµå »ı¼ºÀÚ(°¡·Î, ¼¼·Î)
+	public World(int rows, int columns) { // ì›”ë“œ ìƒì„±ì(ê°€ë¡œ, ì„¸ë¡œ)
 		this.rows = rows;
 		this.columns = columns;
 
-		grid = new boolean[rows][columns]; // ÀÌÁß¹è¿­ °´Ã¼ ¸¸µé±â(Å©±â, ¼³Á¤)
-		buffer = new boolean[rows][columns]; // ÀÓ½Ã¹è¿­
+		grid = new boolean[rows][columns]; // ì´ì¤‘ë°°ì—´ ê°ì²´ ë§Œë“¤ê¸°(í¬ê¸°, ì„¤ì •)
+		buffer = new boolean[rows][columns]; // ì„ì‹œë°°ì—´
 	}
 
-	public boolean getCell(int row, int col) { // ¼¿ÀÇ »óÅÂ¸¦ ¸®ÅÏ
-		return grid[row][col]; // ¿ùµåÀÇ grid¿¡¼­ ÇöÀç ¼¿(»ç°¢Çü)ÀÌ ³ì»öÀÎÁö °ËÀº»öÀÎÁö?
+	public boolean getCell(int row, int col) { // ì…€ì˜ ìƒíƒœë¥¼ ë¦¬í„´
+		return grid[row][col]; // ì›”ë“œì˜ gridì—ì„œ í˜„ì¬ ì…€(ì‚¬ê°í˜•)ì´ ë…¹ìƒ‰ì¸ì§€ ê²€ì€ìƒ‰ì¸ì§€?
 	}
 
 	public void setCell(int row, int col, boolean status) {
-		grid[row][col] = status; // ¼¿ÀÇ »óÅÂ¸¦ ¼³Á¤(¼Â)
+		grid[row][col] = status; // ì…€ì˜ ìƒíƒœë¥¼ ì„¤ì •(ì…‹)
 	}
 
 	public int getRows() {
-		return rows; // ¸¸µé¾îÁø ¹è¿­ÀÇ ÁÙ¼ö¸¦ ¸®ÅÏ
+		return rows; // ë§Œë“¤ì–´ì§„ ë°°ì—´ì˜ ì¤„ìˆ˜ë¥¼ ë¦¬í„´
 	}
 
 	public int getColumns() {
-		return columns; // ¸¸µé¾îÁø ¹è¿­ÀÇ ¿­¼ö¸¦ ¸®ÅÏ
+		return columns; // ë§Œë“¤ì–´ì§„ ë°°ì—´ì˜ ì—´ìˆ˜ë¥¼ ë¦¬í„´
 	}
 
 	public void randomize() {
-		// ±×¸®µå ¹è¿­¿¡ ·£´ıÀ¸·Î true false ³Ö±â
+		// ê·¸ë¦¬ë“œ ë°°ì—´ì— ëœë¤ìœ¼ë¡œ true false ë„£ê¸°
 		Random random = new Random();
 
-		for (int i = 0; i < (rows * columns) / 10; i++) { // ÁÙ°ú ¿­ÀÌ ¸¹À¸¸é ¸¹¾ÆÁø´Ù.
-			int row = random.nextInt(rows); // ·£´ıÀ¸·Î 0ºÎÅÍ row(ÀüÃ¼ÁÙ¼ö)-1±îÁö ·£´ı»ı¼º
+		for (int i = 0; i < (rows * columns) / 10; i++) { // ì¤„ê³¼ ì—´ì´ ë§ìœ¼ë©´ ë§ì•„ì§„ë‹¤.
+			int row = random.nextInt(rows); // ëœë¤ìœ¼ë¡œ 0ë¶€í„° row(ì „ì²´ì¤„ìˆ˜)-1ê¹Œì§€ ëœë¤ìƒì„±
 			int col = random.nextInt(columns); // 0~columns-1
-			setCell(row, col, true); // ·£´ıÀ¸·Î °É¸° ¼¿À» ³ì»öÀ¸·Î
+			setCell(row, col, true); // ëœë¤ìœ¼ë¡œ ê±¸ë¦° ì…€ì„ ë…¹ìƒ‰ìœ¼ë¡œ
 		}
 	}
 
 	public void clear() {
-		// ¸ğµç gridÀÇ ¼¿À» false·Î ¸¸µç´Ù.
+		// ëª¨ë“  gridì˜ ì…€ì„ falseë¡œ ë§Œë“ ë‹¤.
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < columns; col++) {
-				setCell(row, col, false); // ¸ğµç ¼¿À» false
+				setCell(row, col, false); // ëª¨ë“  ì…€ì„ false
 
 			}
 		}
 	}
 
 	public void next() {
-		// ½ºÆäÀÌ½º¹Ù¸¦ ´©¸£¸é ¸ğµç ¼¿ÀÇ ÁÂÇ¥¸¦ Ãâ·Â
+		// ìŠ¤í˜ì´ìŠ¤ë°”ë¥¼ ëˆ„ë¥´ë©´ ëª¨ë“  ì…€ì˜ ì¢Œí‘œë¥¼ ì¶œë ¥
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < columns; col++) {
 				int neighbours = countNeighbours(row, col);
 				// System.out.printf("( %d, %d ) %d \n", row, col, neighbours);
 				/*
-				 * ¾Ë°í¸®Áò 1. ÁÖº¯ ³ì»ö°³¼ö <2 or >3 ´Â °ËÀº»ö 2. ³ì»ö°³¼ö == 3 ÀÏ¶§ ³ì»ö 3. ³ì»ö°³¼ö == 2 ÀÏ¶§ ±×´ë·Î
+				 * ì•Œê³ ë¦¬ì¦˜ 1. ì£¼ë³€ ë…¹ìƒ‰ê°œìˆ˜ <2 or >3 ëŠ” ê²€ì€ìƒ‰ 2. ë…¹ìƒ‰ê°œìˆ˜ == 3 ì¼ë•Œ ë…¹ìƒ‰ 3. ë…¹ìƒ‰ê°œìˆ˜ == 2 ì¼ë•Œ ê·¸ëŒ€ë¡œ
 				 */
 				boolean status = false;
 
@@ -72,10 +72,10 @@ public class World {
 				} else if (neighbours == 3) {
 					status = true;
 				} else if (neighbours == 2) {
-					status = getCell(row, col); // »óÅÂ´Â ±×´ë·Î ÇöÀç ¼¿ÀÇ »óÅÂ
+					status = getCell(row, col); // ìƒíƒœëŠ” ê·¸ëŒ€ë¡œ í˜„ì¬ ì…€ì˜ ìƒíƒœ
 				}
 
-				buffer[row][col] = status; // (¾Ë°í¸®Áò Àû¿ë) ÀÓ½Ã ¹è¿­ ¹öÆÛ¿¡ ÀÔ·ÂÇÑ´Ù.
+				buffer[row][col] = status; // (ì•Œê³ ë¦¬ì¦˜ ì ìš©) ì„ì‹œ ë°°ì—´ ë²„í¼ì— ì…ë ¥í•œë‹¤.
 			}
 		}
 		for (int row = 0; row < rows; row++) {
@@ -93,7 +93,7 @@ public class World {
 			for (int colOffset = -1; colOffset <= 1; colOffset++) {
 
 				if (rowOffset == 0 && colOffset == 0) {
-					continue; // º»ÀÎ¼¿ÀÇ °¹¼ö´Â ¼¼Áö¾Ê°í ´Ù½Ã ¹İº¹
+					continue; // ë³¸ì¸ì…€ì˜ ê°¯ìˆ˜ëŠ” ì„¸ì§€ì•Šê³  ë‹¤ì‹œ ë°˜ë³µ
 				}
 
 				int gridRow = row + rowOffset;
@@ -113,7 +113,7 @@ public class World {
 				boolean status = getCell(gridRow, gridCol);
 
 				if (status) {
-					n++; // ÁÖº¯¿¡ ³ì»ö ¼¿ÀÌ ÀÖÀ¸¸é +1
+					n++; // ì£¼ë³€ì— ë…¹ìƒ‰ ì…€ì´ ìˆìœ¼ë©´ +1
 				}
 			}
 		}

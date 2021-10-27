@@ -7,8 +7,8 @@ public class ToolBar extends JToolBar {
 	private static final long serialVersionUID = 1L;
 	
 	public ToolBar() {
-		add(new JButton("¹öÆ°1"));
-		add(new JButton("¹öÆ°2"));
+		add(new JButton("ë²„íŠ¼1"));
+		add(new JButton("ë²„íŠ¼2"));
 	}
 
 }

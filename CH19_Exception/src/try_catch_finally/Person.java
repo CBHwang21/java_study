@@ -4,8 +4,8 @@ public class Person {
 
 	void setName(String name) throws Exception {
 		if(name == null) {
-			throw new Exception("ÀÌ¸§¿¡ null°ªÀ» ÀÔ·ÂÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			throw new Exception("ì´ë¦„ì— nullê°’ì„ ì…ë ¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		}
-		System.out.println("ÀÌ¸§Àº : " + name);
+		System.out.println("ì´ë¦„ì€ : " + name);
 	}
 }

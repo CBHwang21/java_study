@@ -1,23 +1,23 @@
 package application;
 
 public class Cat {
-	private String name; // °í¾çÀÌ ÀÌ¸§
-	public static final String FOOD = "°í¾çÀÌ »ç·á";
-	// ½ºÅÂÆ½ º¯¼ö´Â °´Ã¼¿¡¼­ °øÀ¯°¡´É
-	private static int count = 0;	// »ı¼ºÇÑ °í¾çÀÌÀÇ ¼ıÀÚ
+	private String name; // ê³ ì–‘ì´ ì´ë¦„
+	public static final String FOOD = "ê³ ì–‘ì´ ì‚¬ë£Œ";
+	// ìŠ¤íƒœí‹± ë³€ìˆ˜ëŠ” ê°ì²´ì—ì„œ ê³µìœ ê°€ëŠ¥
+	private static int count = 0;	// ìƒì„±í•œ ê³ ì–‘ì´ì˜ ìˆ«ì
 	
-	public Cat(String name) {	// »ı¼ºÀÚ´Â ¸®ÅÏ Å¸ÀÔÀÌ ¾øÀ½(ÀÏ¹İ ¸Ş¼Òµå¶û ´Ù¸§)
+	public Cat(String name) {	// ìƒì„±ìëŠ” ë¦¬í„´ íƒ€ì…ì´ ì—†ìŒ(ì¼ë°˜ ë©”ì†Œë“œë‘ ë‹¤ë¦„)
 		this.name = name;
-		count++;	// °í¾çÀÌ °´Ã¤ »ı¼º½Ã ½ºÅÂÆ½ count°¡ +1µÊ
+		count++;	// ê³ ì–‘ì´ ê°ì±„ ìƒì„±ì‹œ ìŠ¤íƒœí‹± countê°€ +1ë¨
 	}
 
 	@Override
-	public String toString() {	// toString ¸Ş¼Òµå ÀÚµ¿»ı¼º
-		return "°í¾çÀÌ [ÀÌ¸§=" + name + "]";
+	public String toString() {	// toString ë©”ì†Œë“œ ìë™ìƒì„±
+		return "ê³ ì–‘ì´ [ì´ë¦„=" + name + "]";
 	}
 	
-	public static int getCount() {	// ½ºÅÂÆ½ ¸Ş¼Òµå
-		//String n = name; ½ºÅÂÆ½ ¸Ş¼Òµå¿¡¼­ ÀÎ½ºÅÏ½º(°´Ã¼) º¯¼ö¸¦ »ç¿ëÇÒ ¼ö ¾ø´Ù.
+	public static int getCount() {	// ìŠ¤íƒœí‹± ë©”ì†Œë“œ
+		//String n = name; ìŠ¤íƒœí‹± ë©”ì†Œë“œì—ì„œ ì¸ìŠ¤í„´ìŠ¤(ê°ì²´) ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤.
 		return count;
 	}
 	

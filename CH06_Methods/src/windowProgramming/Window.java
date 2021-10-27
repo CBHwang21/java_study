@@ -1,12 +1,12 @@
 package windowProgramming;
 
 public class Window {
-	// Å¬·¡½º º¯¼ö
+	// í´ë˜ìŠ¤ ë³€ìˆ˜
 	private int width;
 	private int height;
-	private boolean isVisible;	// º¸ÀÌ´Â°¡?
-	private int top;	// ÁÂÇ¥ À§ÂÊ¿¡¼­ °Å¸®
-	private int left;	// ÁÂÇ¥ ¿ŞÂÊ¿¡¼­ °Å¸®
+	private boolean isVisible;	// ë³´ì´ëŠ”ê°€?
+	private int top;	// ì¢Œí‘œ ìœ„ìª½ì—ì„œ ê±°ë¦¬
+	private int left;	// ì¢Œí‘œ ì™¼ìª½ì—ì„œ ê±°ë¦¬
 	
 	public void setWidth(int width) {
 		this.width = width;

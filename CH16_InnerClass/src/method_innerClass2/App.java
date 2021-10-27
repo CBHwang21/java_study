@@ -4,8 +4,8 @@ public class App {
 	private String name;
 	
 	public App() {
-		// ±âº» »ı¼ºÁö
-		name = "¿¤¸®ÀÚº£½º";
+		// ê¸°ë³¸ ìƒì„±ì§€
+		name = "ì—˜ë¦¬ìë² ìŠ¤";
 	}
 	
 	public String getName() {
@@ -13,11 +13,11 @@ public class App {
 	}
 	
 	public void run() {
-		//System.out.println(name);	// ÀÌ¸§À» Ãâ·Â
+		//System.out.println(name);	// ì´ë¦„ì„ ì¶œë ¥
 		class Printer {
 			public void print() {
 				System.out.println(name);
-				// ³»ºÎ Å¬·¡½º¿¡¼­ ¿ÜºÎÅ¬·¡½ºÀÇ º¯¼ö »ç¿ë°¡´É
+				// ë‚´ë¶€ í´ë˜ìŠ¤ì—ì„œ ì™¸ë¶€í´ë˜ìŠ¤ì˜ ë³€ìˆ˜ ì‚¬ìš©ê°€ëŠ¥
 			}
 		}
 		
@@ -27,7 +27,7 @@ public class App {
 	}
 	
 	public static void main(String[] args) {
-		// ¸Ş¼Òµå ¾ÈÀÇ ±Û·¡½º
+		// ë©”ì†Œë“œ ì•ˆì˜ ê¸€ë˜ìŠ¤
 		App app = new App();
 		app.run();
 	}

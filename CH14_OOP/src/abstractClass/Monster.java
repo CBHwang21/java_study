@@ -4,7 +4,7 @@ public class Monster extends GameObject {
 
 	@Override
 	public void describe() {
-		System.out.println("¸ó½ºÅÍ ÀÔ´Ï´Ù.");
+		System.out.println("ëª¬ìŠ¤í„° ìž…ë‹ˆë‹¤.");
 		
 	}
 

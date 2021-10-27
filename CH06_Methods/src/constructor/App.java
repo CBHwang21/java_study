@@ -5,15 +5,15 @@ public class App {
 	public static void main(String[] args) {
 		
 		Person p1 = new Person();
-		p1.setName("Æë¼ö");
+		p1.setName("í­ìˆ˜");
 		p1.setHeight(120.0);
 		
 		Person p2 = new Person();
-		p2.setName("±æµ¿");
+		p2.setName("ê¸¸ë™");
 		p2.setHeight(172.5);
 		
 		Person p3 = new Person();
-		p3.setName("¶óÀÌ¾ğ");
+		p3.setName("ë¼ì´ì–¸");
 		p3.setHeight(165.5);
 		
 		System.out.println(p1.getName());

@@ -1,13 +1,13 @@
 package overridingMehtod;
 
 public class Cat {
-	// °í¾çÀÌ´Â ¾ß¿ËÀÌ¶ó°í ¿ï°í »ç³ÉÇÒ ¼ö ÀÖ³ª.
+	// ê³ ì–‘ì´ëŠ” ì•¼ì˜¹ì´ë¼ê³  ìš¸ê³  ì‚¬ëƒ¥í•  ìˆ˜ ìˆë‚˜.
 	public void vocal() {
-		System.out.println("¾ß¿Ë~");
+		System.out.println("ì•¼ì˜¹~");
 	}
 	
 	public void hunt() {
-		System.out.println("»ç³ÉÁß!");
+		System.out.println("ì‚¬ëƒ¥ì¤‘!");
 	}
 
 }

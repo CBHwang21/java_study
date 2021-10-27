@@ -2,15 +2,15 @@ package casting;
 
 public class HouseCat {
 
-	// °°Àº vocal()¸Ş¼Òµå¸¦ ¿À¹ö¶óÀÌµù(°°Àº ¸Ş¼Òµå¿¡ ´Ù¸¥ ³»¿ëÀ» ÀÛ¼º)
+	// ê°™ì€ vocal()ë©”ì†Œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”©(ê°™ì€ ë©”ì†Œë“œì— ë‹¤ë¥¸ ë‚´ìš©ì„ ì‘ì„±)
 	@Override
 	public void vocal() {
-			System.out.println("¹Ì¾ß¿ì~");
+			System.out.println("ë¯¸ì•¼ìš°~");
 		}
 	
-	// Áı°í¾çÀÌÀÇ ¸Ş¼Òµå
+	// ì§‘ê³ ì–‘ì´ì˜ ë©”ì†Œë“œ
 	public void call() {
-		System.out.println("Áı»ç¸¦ ºÎ¸¨´Ï´Ù~");
+		System.out.println("ì§‘ì‚¬ë¥¼ ë¶€ë¦…ë‹ˆë‹¤~");
 		}
 	}
 

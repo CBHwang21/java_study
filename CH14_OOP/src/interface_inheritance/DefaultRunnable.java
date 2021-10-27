@@ -1,8 +1,8 @@
 package interface_inheritance;
 
-// ÀÎÅÍÆäÀÌ½º¿¡ ÀÎÅÍÆäÀÌ½º¸¦ »ó¼Ó
+// ì¸í„°í˜ì´ìŠ¤ì— ì¸í„°í˜ì´ìŠ¤ë¥¼ ìƒì†
 public interface DefaultRunnable extends Runnable {
-	default void displayDetails() {	// µğÆúÆ® ¸Ş¼­µå´Â ¸Ş¼Òµå ÄÚµå¸¦ ¸¸µç´Ù.
-		System.out.println("Ç¥½ÃÇÒ µğÅ×ÀÏ ¾øÀ½");
+	default void displayDetails() {	// ë””í´íŠ¸ ë©”ì„œë“œëŠ” ë©”ì†Œë“œ ì½”ë“œë¥¼ ë§Œë“ ë‹¤.
+		System.out.println("í‘œì‹œí•  ë””í…Œì¼ ì—†ìŒ");
 	};
 }

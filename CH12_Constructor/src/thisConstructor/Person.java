@@ -1,12 +1,12 @@
 package thisConstructor;
 
 public class Person {
-	private String name;	// ÀÌ¸§
-	private int age;		// ³ªÀÌ
+	private String name;	// ì´ë¦„
+	private int age;		// ë‚˜ì´
 	
 	public Person() {
-		this("¸ğ¸§", 0);
-		//name = "¸ğ¸§";
+		this("ëª¨ë¦„", 0);
+		//name = "ëª¨ë¦„";
 		//age = 0;
 		
 	}

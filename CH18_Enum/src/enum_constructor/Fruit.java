@@ -1,7 +1,7 @@
 package enum_constructor;
 
-public enum Fruit {	//	enumÀº »ó¼ö(º¯ÇÏÁö ¾Ê´Â °ª)µéÀÇ ÁıÇÕ
-	APPLE("ÃÊ·Ï»ö"), BANANA("³ë¶õ»ö"), ORANGE("¿À·»Áö»ö");	// ¾ÖÇÃ, ¹Ù³ª³ª, ¿À·»Áö ¿­°Å
+public enum Fruit {	//	enumì€ ìƒìˆ˜(ë³€í•˜ì§€ ì•ŠëŠ” ê°’)ë“¤ì˜ ì§‘í•©
+	APPLE("ì´ˆë¡ìƒ‰"), BANANA("ë…¸ë€ìƒ‰"), ORANGE("ì˜¤ë Œì§€ìƒ‰");	// ì• í”Œ, ë°”ë‚˜ë‚˜, ì˜¤ë Œì§€ ì—´ê±°
 	
 	private String color;
 	

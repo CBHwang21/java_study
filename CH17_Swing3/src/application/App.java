@@ -8,11 +8,11 @@ import gui.MainFrame;
 public class App {
 
 	public static void main(String[] args) {
-		// JFrameÀ¸·Î À©µµ¿ì Ã¢ ¸¸µé±â
+		// JFrameìœ¼ë¡œ ìœˆë„ìš° ì°½ ë§Œë“¤ê¸°
 		
 		SwingUtilities.invokeLater(()->{
 			
-			new MainFrame("Å×½ºÆ® ½ºÀ®");	// »õÃ¢ mainFrameÀ» »ı¼º
+			new MainFrame("í…ŒìŠ¤íŠ¸ ìŠ¤ìœ™");	// ìƒˆì°½ mainFrameì„ ìƒì„±
 				
 		});
 		

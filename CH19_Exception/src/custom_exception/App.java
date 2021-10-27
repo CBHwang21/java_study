@@ -6,19 +6,19 @@ import custom_exception.exception.TempTooLowException;
 
 public class App {
 	public static void main(String[] args)  {
-		// ¿¹¿ÜÃ³¸®¸¦ ³Ñ±è
+		// ì˜ˆì™¸ì²˜ë¦¬ë¥¼ ë„˜ê¹€
 		Thermostat stat = new Thermostat();
 		
-		// setTemperature ¸Ş¼Òµå¿¡¼­ ¿¹¿ÜÃ³¸®¸¦ throwÇß±â ¶§¹®¿¡ È£ÃâÇÒ¶§ Ã³¸®ÇØ¾ß ÇÑ´Ù.
-		// try-catch´Â ¹Ù·Î Ã³¸®, throw´Â ³Ñ±è
+		// setTemperature ë©”ì†Œë“œì—ì„œ ì˜ˆì™¸ì²˜ë¦¬ë¥¼ throwí–ˆê¸° ë•Œë¬¸ì— í˜¸ì¶œí• ë•Œ ì²˜ë¦¬í•´ì•¼ í•œë‹¤.
+		// try-catchëŠ” ë°”ë¡œ ì²˜ë¦¬, throwëŠ” ë„˜ê¹€
 		
 		try {
 			stat.setTemperature(-5);
 		} catch (TempTooHighException e) {
-			// ¿Âµµ°¡ ³·À»°æ¿ì Ã³¸® ÄÚµå
+			// ì˜¨ë„ê°€ ë‚®ì„ê²½ìš° ì²˜ë¦¬ ì½”ë“œ
 			System.out.println(e.getMessage());
 		} catch (TempTooLowException e) {
-			// ¿Âµµ°¡ ³ôÀ»°æ¿ì Ã³¸® ÄÚµå
+			// ì˜¨ë„ê°€ ë†’ì„ê²½ìš° ì²˜ë¦¬ ì½”ë“œ
 			System.out.println(e.getMessage());
 		}
 	}

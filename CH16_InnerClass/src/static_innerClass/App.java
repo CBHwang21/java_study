@@ -5,10 +5,10 @@ public class App {
 	public static void main(String[] args) {
 		Person p1 = new Person();
 		p1.print();
-		// ÀÌ³ÊÅ¬·¡½º (°´Ã¼¸¦ ¸¸µé¶§µµ ¸ÕÀú ¿ÜºÎÅ¬·¡½º °´Ã¼¸¦ ¸¸µé°í ¸¸µé¼ö ÀÖ´Ù)
+		// ì´ë„ˆí´ë˜ìŠ¤ (ê°ì²´ë¥¼ ë§Œë“¤ë•Œë„ ë¨¼ì € ì™¸ë¶€í´ë˜ìŠ¤ ê°ì²´ë¥¼ ë§Œë“¤ê³  ë§Œë“¤ìˆ˜ ìˆë‹¤)
 		Person.Head head = p1.new Head();
 		head.print();
-		// ½ºÅÂÆ½ ÀÌ³Ê Å¬·¡½º : ¿ÜºÎ°´Ã¼¿¡¼­ ¹Ù·Î .Body();
+		// ìŠ¤íƒœí‹± ì´ë„ˆ í´ë˜ìŠ¤ : ì™¸ë¶€ê°ì²´ì—ì„œ ë°”ë¡œ .Body();
 		Person.Body body = new Person.Body();
 		body.print();
 

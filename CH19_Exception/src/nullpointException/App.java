@@ -5,23 +5,23 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) {
-		// nullÆ÷ÀÎÅÍ, 0À¸·Î ³ª´©¾úÀ»¶§ => ·±Å¸ÀÓ ¿¹¿Ü ¹ß»ı
-		// 1. 0À¸·Î ³ª´©¾úÀ»¶§
+		// nullí¬ì¸í„°, 0ìœ¼ë¡œ ë‚˜ëˆ„ì—ˆì„ë•Œ => ëŸ°íƒ€ì„ ì˜ˆì™¸ ë°œìƒ
+		// 1. 0ìœ¼ë¡œ ë‚˜ëˆ„ì—ˆì„ë•Œ
 		try {
 		System.out.println(5/0);
 		} catch (ArithmeticException e) {
-			System.out.println("0À¸·Î ³ª´­¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		}
 	
 	
-		// 2. °´Ã¼ÀÇ ÁÖ¼Ò°ªÀÌ nullÀÏ¶§!!!
+		// 2. ê°ì²´ì˜ ì£¼ì†Œê°’ì´ nullì¼ë•Œ!!!
 		Scanner scanner = null;	//	new Scanner(System.in);
 		
 		try {
 			scanner.nextLine();
 			scanner.close();
 		} catch (NullPointerException e) {
-			System.out.println("°´Ã¼ÀÇ °ªÀÌ nullÀÔ´Ï´Ù.");
+			System.out.println("ê°ì²´ì˜ ê°’ì´ nullì…ë‹ˆë‹¤.");
 		}
 	
 	}

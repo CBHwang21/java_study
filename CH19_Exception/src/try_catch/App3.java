@@ -9,7 +9,7 @@ public class App3 {
 	public static void main(String[] args) {
 		
 		int number = getNumber();
-		System.out.println("ÀÔ·ÂÇÑ ¼ıÀÚ´Â : " + number);
+		System.out.println("ì…ë ¥í•œ ìˆ«ìëŠ” : " + number);
 		scanner.close();
 		
 	}
@@ -17,17 +17,17 @@ public class App3 {
 	private static int getNumber() {
 		
 		int number = 0;
-		boolean isNumber = false;	// ¼ıÀÚ ÀÎ°¡ t / f
+		boolean isNumber = false;	// ìˆ«ì ì¸ê°€ t / f
 		
 		do {
-			System.out.println("¼ıÀÚ¸¦ ÀÔ·Â : ");
+			System.out.println("ìˆ«ìë¥¼ ì…ë ¥ : ");
 			String line = scanner.nextLine();
 		
-			try {	// ¿¡·¯°¡ ³¯ ¼ö ÀÖ´Â ÄÚµå¸¦ try¹® ¾È¿¡ ³Ö´Â´Ù.
-				number = Integer.parseInt(line);	//¿©±â¼­ ¿¡·¯°¡ ³ªÁö ¾ÊÀ¸¸é ¼ıÀÚ ÀÔ·ÂÀÌ ¸ÂÀ½
+			try {	// ì—ëŸ¬ê°€ ë‚  ìˆ˜ ìˆëŠ” ì½”ë“œë¥¼ tryë¬¸ ì•ˆì— ë„£ëŠ”ë‹¤.
+				number = Integer.parseInt(line);	//ì—¬ê¸°ì„œ ì—ëŸ¬ê°€ ë‚˜ì§€ ì•Šìœ¼ë©´ ìˆ«ì ì…ë ¥ì´ ë§ìŒ
 				isNumber = true;
-			} catch (NumberFormatException e) {	// try¿¡¼­ ¿¡·¯ ¹ß»ı½Ã catch¹®¿¡¼­ Ã³¸®ÇÑ´Ù.
-				System.out.println("¼ıÀÚ ÀÔ·ÂÀÌ ¾Æ´Õ´Ï´Ù.");
+			} catch (NumberFormatException e) {	// tryì—ì„œ ì—ëŸ¬ ë°œìƒì‹œ catchë¬¸ì—ì„œ ì²˜ë¦¬í•œë‹¤.
+				System.out.println("ìˆ«ì ì…ë ¥ì´ ì•„ë‹™ë‹ˆë‹¤.");
 			}
 		} while (!isNumber);
 		

@@ -1,23 +1,23 @@
 package defaultConstructor;
 
 public class Person {
-	private String name;	// ÀÌ¸§
-	private int age;		// ³ªÀÌ
+	private String name;	// ì´ë¦„
+	private int age;		// ë‚˜ì´
 	
 	public Person() {
-		System.out.println("µğÆúÆ® »ı¼ºÀÚ·Î »ı¼ºµÊ!");
-		name = "¸ğ¸§";
+		System.out.println("ë””í´íŠ¸ ìƒì„±ìë¡œ ìƒì„±ë¨!");
+		name = "ëª¨ë¦„";
 		age = 0;
 	}
 	
 	public Person(String name) {
-		System.out.println("person »ı¼ºµÊ!");
+		System.out.println("person ìƒì„±ë¨!");
 		this.name = name;
 		age = 0;
 	}
 	
 	public Person(String name, int age) {
-		System.out.println("person »ı¼ºµÊ!");
+		System.out.println("person ìƒì„±ë¨!");
 		this.name = name;
 		this.age = age;
 	}

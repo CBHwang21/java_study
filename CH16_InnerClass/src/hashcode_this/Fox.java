@@ -5,6 +5,6 @@ public class Fox {
 	
 	public Fox() {
 		System.out.println(this);
-		this.name = "Æø½º";
+		this.name = "í­ìŠ¤";
 	}
 }

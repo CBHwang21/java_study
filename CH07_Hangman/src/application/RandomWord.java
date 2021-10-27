@@ -6,13 +6,13 @@ public class RandomWord {
 	private String books = "leadership efficiency election assistance signature relation confusion government pollution enthusiasm conversation importance childhood judgment refrigerator preference attitude departure consequence apartment";
 	private String[] words = books.split(" ");
 	
-	private String selectWord;	// ¼±ÅÃÇÑ ´Ü¾î
-	private Random rand = new Random();	// ·£´ı °´Ã¼¸¦ »ı¼º
+	private String selectWord;	// ì„ íƒí•œ ë‹¨ì–´
+	private Random rand = new Random();	// ëœë¤ ê°ì²´ë¥¼ ìƒì„±
 	private char[] characters;
 	
 	public RandomWord() {
-		selectWord = words[rand.nextInt(words.length)];	// ·£´ıÀ¸·Î ´Ü¾î¸¦ ¼±ÅÃ
-		characters = new char[selectWord.length()];	// ¹®ÀÚ ¹è¿­ °ø°£ »ı¼º
+		selectWord = words[rand.nextInt(words.length)];	// ëœë¤ìœ¼ë¡œ ë‹¨ì–´ë¥¼ ì„ íƒ
+		characters = new char[selectWord.length()];	// ë¬¸ì ë°°ì—´ ê³µê°„ ìƒì„±
 	}
 	
 	public String toSting() {
@@ -37,8 +37,8 @@ public class RandomWord {
 	}
 
 	public void addGuess(char c) {
-		// »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ÇÑ ¹®ÀÚ¸¦ ¼±ÅÃµÈ ´Ü¾î¿¡¼­ °°Àº°Ô ÀÖ´ÂÁö È®ÀÎ
-		// ÀÖÀ¸¸é charactersÀÇ ÀÎµ¦½º À§Ä¡¿¡ ÀÔ·Â.
+		// ì‚¬ìš©ìê°€ ì…ë ¥í•œ í•œ ë¬¸ìë¥¼ ì„ íƒëœ ë‹¨ì–´ì—ì„œ ê°™ì€ê²Œ ìˆëŠ”ì§€ í™•ì¸
+		// ìˆìœ¼ë©´ charactersì˜ ì¸ë±ìŠ¤ ìœ„ì¹˜ì— ì…ë ¥.
 		for(int i=0; i < selectWord.length(); i++) {
 			if(c == selectWord.charAt(i)) {
 				characters[i] = c;
@@ -47,14 +47,14 @@ public class RandomWord {
 		
 	}
 
-	public boolean isCompleted() {	// ´Ù ¸ÂÃè³ª?
+	public boolean isCompleted() {	// ë‹¤ ë§ì·„ë‚˜?
 		
 		for(char c : characters) {
 			if(c=='\u0000') {
-				return false;	// ¾ÆÁ÷ Ä³¸¯ÅÍ½º ¹è¿­¿¡ ¸ø¸ÂÃá Ã¶ÀÚ°¡ ÀÖÀ½
+				return false;	// ì•„ì§ ìºë¦­í„°ìŠ¤ ë°°ì—´ì— ëª»ë§ì¶˜ ì² ìê°€ ìˆìŒ
 			} 
 		}
 		
-		return false;	// ´Ù ¸ÂÃèÀ½
+		return false;	// ë‹¤ ë§ì·„ìŒ
 	}
 }

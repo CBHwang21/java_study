@@ -6,9 +6,9 @@ public class App {
 		
 		Person p1 = new Person();
 		System.out.println(p1);
-		Person p2 = new Person("Æë¼ö");
+		Person p2 = new Person("í­ìˆ˜");
 		System.out.println(p2);
-		Person p3 = new Person("¶óÀÌ¾ğ", 27);
+		Person p3 = new Person("ë¼ì´ì–¸", 27);
 		System.out.println(p3);
 	}
 }

@@ -4,9 +4,9 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		Person p1 = new Person("Æë¼ö", 120.0);
-		Person p2 = new Person("±æµ¿", 172.5);
-		Person p3 = new Person("¶óÀÌ¾ğ", 165.5);
+		Person p1 = new Person("í­ìˆ˜", 120.0);
+		Person p2 = new Person("ê¸¸ë™", 172.5);
+		Person p3 = new Person("ë¼ì´ì–¸", 165.5);
 		Person p4 = new Person();	
 		
 		System.out.println(p1.toString());

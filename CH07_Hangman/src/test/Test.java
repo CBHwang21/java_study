@@ -7,7 +7,7 @@ import application.RandomWord;
 public class Test {
 
 	public static void main(String[] args) {
-		// Å×½ºÆ® ¿ë
+		// í…ŒìŠ¤íŠ¸ ìš©
 		RandomWord word = new RandomWord();
 		
 		System.out.println(word.toString());
@@ -16,12 +16,12 @@ public class Test {
 		
 		//Random random = new Random();
 		
-		//String[] words = { "Æë¼ö", "°í¾çÀÌ", "¶óÀÌ¾ğ", "´Á´ë", "¼Ò" };
+		//String[] words = { "í­ìˆ˜", "ê³ ì–‘ì´", "ë¼ì´ì–¸", "ëŠ‘ëŒ€", "ì†Œ" };
 		
 		
 		
 		//for(int i=0; i<100; i++) {
-			//int n = random.nextInt(words.length);	// ¹è¿­ÀÇ Å©±â¸¸Å­ ·£´ı¼ıÀÚ»ı¼º
+			//int n = random.nextInt(words.length);	// ë°°ì—´ì˜ í¬ê¸°ë§Œí¼ ëœë¤ìˆ«ììƒì„±
 			//System.out.println(words[n]);
 		//}
 		

@@ -2,11 +2,11 @@ package throwing_exception2;
 
 public class App {
 	public static void main(String[] args)  {
-		// ¿¹¿ÜÃ³¸®¸¦ ³Ñ±è
+		// ì˜ˆì™¸ì²˜ë¦¬ë¥¼ ë„˜ê¹€
 		Thermostat stat = new Thermostat();
 		
-		// setTemperature ¸Ş¼Òµå¿¡¼­ ¿¹¿ÜÃ³¸®¸¦ throwÇß±â ¶§¹®¿¡ È£ÃâÇÒ¶§ Ã³¸®ÇØ¾ß ÇÑ´Ù.
-		// try-catch´Â ¹Ù·Î Ã³¸®, throw´Â ³Ñ±è
+		// setTemperature ë©”ì†Œë“œì—ì„œ ì˜ˆì™¸ì²˜ë¦¬ë¥¼ throwí–ˆê¸° ë•Œë¬¸ì— í˜¸ì¶œí• ë•Œ ì²˜ë¦¬í•´ì•¼ í•œë‹¤.
+		// try-catchëŠ” ë°”ë¡œ ì²˜ë¦¬, throwëŠ” ë„˜ê¹€
 		
 		try {
 			stat.setTemperature(40);

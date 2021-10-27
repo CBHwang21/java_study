@@ -4,13 +4,13 @@ public class Person {
 	private String name;
 	private double height;
 	
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public Person() {
-		// ±âº» »ı¼ºÀÚ(¸Å°³º¯¼ö ¾øÀ½)´Â »ı·«°¡´É
-		System.out.println("ÇÑ »ç¶÷À» »ı¼º!");
+		// ê¸°ë³¸ ìƒì„±ì(ë§¤ê°œë³€ìˆ˜ ì—†ìŒ)ëŠ” ìƒëµê°€ëŠ¥
+		System.out.println("í•œ ì‚¬ëŒì„ ìƒì„±!");
 	}
 	
-	// get set ¸Ş¼Òµå
+	// get set ë©”ì†Œë“œ
 	public void setName(String name) {
 		this.name = name;
 	}

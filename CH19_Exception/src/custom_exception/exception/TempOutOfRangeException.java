@@ -1,12 +1,12 @@
 package custom_exception.exception;
 
-// ¿Âµµ°¡ ³·°Å³ª ¶Ç´Â ³Ê¹« ³ôÀ»°æ¿ì ¹ß»ıÇÏ´Â ¿¹¿ÜÀÇ »óÀ§ Å¬·¡½º
+// ì˜¨ë„ê°€ ë‚®ê±°ë‚˜ ë˜ëŠ” ë„ˆë¬´ ë†’ì„ê²½ìš° ë°œìƒí•˜ëŠ” ì˜ˆì™¸ì˜ ìƒìœ„ í´ë˜ìŠ¤
 public class TempOutOfRangeException extends Exception {
 	private static final long serialVersionUID = 1L;
 	
 	public TempOutOfRangeException(String message) {
-		// »ı¼ºÀÚ ¿¹¿Ü ¸Ş½ÃÁö¸¦ »óÀ§ ¿¹¿ÜÅ¬·¡½º¿¡ Ã³¸®
-		super(message);	// ¿¹¿ÜÅ¬·¡½º¿¡¼­ ¸Ş½ÃÁö¸íÀ¸·Î ¿¹¿Ü¸¦ »ı¼º
+		// ìƒì„±ì ì˜ˆì™¸ ë©”ì‹œì§€ë¥¼ ìƒìœ„ ì˜ˆì™¸í´ë˜ìŠ¤ì— ì²˜ë¦¬
+		super(message);	// ì˜ˆì™¸í´ë˜ìŠ¤ì—ì„œ ë©”ì‹œì§€ëª…ìœ¼ë¡œ ì˜ˆì™¸ë¥¼ ìƒì„±
 	}
 
 }

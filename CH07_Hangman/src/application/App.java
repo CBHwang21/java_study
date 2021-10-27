@@ -3,10 +3,10 @@ package application;
 public class App {
 
 	public static void main(String[] args) {
-		// Hangman ÇÁ·Î±×·¥ ½ÃÀÛ
+		// Hangman í”„ë¡œê·¸ë¨ ì‹œì‘
 		Hangman game = new Hangman();
-		game.run();	// °ÔÀÓ½ÃÀÛ
-		game.close(); //°ÔÀÓ Á¾·á
+		game.run();	// ê²Œì„ì‹œì‘
+		game.close(); //ê²Œì„ ì¢…ë£Œ
 		
 	}
 

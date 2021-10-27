@@ -1,25 +1,25 @@
 package constructorParameter;
 
 public class Person {
-	// º¯¼ö
+	// ë³€ìˆ˜
 	private String name;
 	private double height;
 	
 	public Person() {
-		// ±âº» »ı¼ºÀÚ
-		name = "½Å¿ø¹Ì»ó";
+		// ê¸°ë³¸ ìƒì„±ì
+		name = "ì‹ ì›ë¯¸ìƒ";
 		height = 0.0;
-		System.out.println("ÇÑ »ç¶÷À» »ı¼º!");
+		System.out.println("í•œ ì‚¬ëŒì„ ìƒì„±!");
 	}
 	
-	// »ı¼ºÀÚ(ÀÌ¸§, Å°)
+	// ìƒì„±ì(ì´ë¦„, í‚¤)
 	public Person(String name, double height) {
 		this.name = name;
 		this.height = height;
-		System.out.println("ÇÑ »ç¶÷À» »ı¼º!");
+		System.out.println("í•œ ì‚¬ëŒì„ ìƒì„±!");
 	}
 	
-	// get set ¸Ş¼Òµå
+	// get set ë©”ì†Œë“œ
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -34,6 +34,6 @@ public class Person {
 	}
 	
 	public String toString() {
-		return "ÀÌ¸§ : " + name + " Å° : " + height;
+		return "ì´ë¦„ : " + name + " í‚¤ : " + height;
 	}
 }

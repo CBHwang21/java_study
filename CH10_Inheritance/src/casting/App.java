@@ -4,15 +4,15 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		Cat cat1 = new HouseCat();	// Áı°í¾çÀÌ °´Ã¼
+		Cat cat1 = new HouseCat();	// ì§‘ê³ ì–‘ì´ ê°ì²´
 		cat1.vocal();
 		cat1.hunt();
 		
 		//cat1.call();
-		//Cat Å¸ÀÔÀÌ±â ¶§¹®¿¡ °í¾çÀÌ ¸Ş¼Òµå¸¸ »ç¿ë°¡´É(¿À¹ö¶óÀÌµù µÊ)
+		//Cat íƒ€ì…ì´ê¸° ë•Œë¬¸ì— ê³ ì–‘ì´ ë©”ì†Œë“œë§Œ ì‚¬ìš©ê°€ëŠ¥(ì˜¤ë²„ë¼ì´ë”© ë¨)
 		
 		HouseCat cat2 = (HouseCat)cat1;
-		cat2.call();	// À§¿¡¼­ ¼±¾ğµÈ Áı°í¾çÀÌ °´Ã¼ÀÇ call ¸Ş¼Òµå ½ÇÇà
+		cat2.call();	// ìœ„ì—ì„œ ì„ ì–¸ëœ ì§‘ê³ ì–‘ì´ ê°ì²´ì˜ call ë©”ì†Œë“œ ì‹¤í–‰
 		
 
 	}

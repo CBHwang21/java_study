@@ -7,9 +7,9 @@ public class App {
 		Person person = new Person();
 		
 		person.greet();
-		person.greet("Æë¼ö");
+		person.greet("í­ìˆ˜");
 		person.greet(190);
-		person.greet("¶óÀÌ¾ğ", 170);
+		person.greet("ë¼ì´ì–¸", 170);
 		
 	}
 

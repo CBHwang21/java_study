@@ -13,6 +13,6 @@ public class MainPanel extends JPanel implements ColorChangeListener{
 
 	@Override
 	public void changeColor(Color color) {
-		setBackground(color);	// ¹è°æ»ö ¹Ù²Ù±â Ãß»ó¸Ş¼Òµå changeColor ¿Ï¼º
+		setBackground(color);	// ë°°ê²½ìƒ‰ ë°”ê¾¸ê¸° ì¶”ìƒë©”ì†Œë“œ changeColor ì™„ì„±
 	}
 }

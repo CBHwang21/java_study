@@ -6,7 +6,7 @@ public class App {
 		Fox fox1 = new Fox();
 		
 		System.out.println(fox1.toString());
-		System.out.printf("%x\n", fox1.hashCode());	// ÇØ½ÃÄÚµå(ÁÖ¼Ò°ª)À» 16Áø¼ö·Î º¯È¯
+		System.out.printf("%x\n", fox1.hashCode());	// í•´ì‹œì½”ë“œ(ì£¼ì†Œê°’)ì„ 16ì§„ìˆ˜ë¡œ ë³€í™˜
 		
 		Fox fox2 = new Fox();
 		
