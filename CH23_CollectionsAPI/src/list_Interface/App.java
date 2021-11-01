@@ -14,7 +14,7 @@ public class App {
 		numbers.add(8);
 		numbers.add(4);
 		
-		displayList(numbers);	// 리스트내용을 출력하는 메소
+		displayList(numbers);	// 리스트내용을 출력하는 메소드
 
 	}
 
