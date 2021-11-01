@@ -2,17 +2,6 @@ package arrayList;
 
 import java.util.ArrayList;
 
-class Person {
-	private String name;
-
-	public Person(String name) {
-		this.name = name;
-	}
-
-	public String toString() {
-		return name;
-	}
-}
 
 public class Custom_Object {
 
