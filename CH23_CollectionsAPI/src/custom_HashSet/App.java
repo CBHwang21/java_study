@@ -39,7 +39,7 @@ public class App {
 		// 커스텀 클래스 Creature 타입 셋 리스트 생성
 		HashSet<Creature> creatures = new HashSet<>();
 		
-		// 셋 형에서 중복의 비교는 객체의 equals 메소드를 사용해 같으면 제외
+		// Set형에서 중복의 비교는 객체의 equals 메소드를 사용해 같으면 제외
 		creatures.add(new Creature(0, "고양이"));
 		creatures.add(new Creature(1, "개"));
 		creatures.add(new Creature(2, "돼지"));
