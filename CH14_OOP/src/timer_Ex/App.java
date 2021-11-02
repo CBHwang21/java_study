@@ -2,22 +2,25 @@ package timer_Ex;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JOptionPane;
-import timer_Ex.Task;
 
-class Alert extends Runnable{
+class Alert extends TimerTask{
 	@Override
 	public void run() {
 		System.out.println("계란 삶는 중");		
 	}
-	
 }
 
-class Task implements TimerTask {
+class Task implements Runnable {
 	@Override
 	public void run() {
 		JOptionPane.showMessageDialog(null, "계란 삶기 완료");
+	}
+}
 
 public class App {
 

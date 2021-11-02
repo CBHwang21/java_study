@@ -24,7 +24,7 @@ public class App {
 			System.out.println(x);
 
 		}
-	private static int add(int a, int b);
+	private static int add(int a, int b) {
 		return a+b;
 	}
 }
