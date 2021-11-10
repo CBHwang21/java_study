@@ -1,4 +1,4 @@
-package shoppingmall;
+package products;
 
 public abstract class Product {
 
@@ -7,7 +7,8 @@ public abstract class Product {
 	protected int price;
 	protected int remainingStock;
 	
-	Product(String productName, int price, int remainingStock) {
+	public Product(String categoryName, String productName, int price, int remainingStock) {
+		this.categoryName = categoryName;
 		this.productName = productName;
 		this.price = price;
 		this.remainingStock = remainingStock;

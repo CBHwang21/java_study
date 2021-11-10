@@ -1,4 +1,4 @@
-package Mart;
+package event;
 
 import java.util.Random;
 

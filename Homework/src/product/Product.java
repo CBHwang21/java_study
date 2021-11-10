@@ -1,13 +1,13 @@
-package shoppingmall;
+package product;
 
 public abstract class Product {
-
 	protected String categoryName;
 	protected String productName;
 	protected int price;
 	protected int remainingStock;
 	
-	Product(String productName, int price, int remainingStock) {
+	public Product(String categoryName, String productName, int price, int remainingStock) {
+		this.categoryName = categoryName;
 		this.productName = productName;
 		this.price = price;
 		this.remainingStock = remainingStock;
@@ -22,7 +22,7 @@ public abstract class Product {
 	}
 	
 	public String getProductName() {
-		return this.productName;
+		return this.categoryName;
 	}
 	
 	public int getPrice() {
@@ -38,6 +38,6 @@ public abstract class Product {
 	}
 	
 	public void printDetail(int num) {
-		System.out.printf("#  상품명%d : %s, 가격 : %d, 남은 재고 : %d\n", num + 1, productName, price, remainingStock);
+		System.out.printf("@ 상품명%d : %s, 가격 : %d, 남은 재고 : %d\n, productName, Price, remainingStock");
 	};
 }

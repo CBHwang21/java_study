@@ -3,13 +3,19 @@ package shoppingmall;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import products.Cloth;
+import products.Electronic;
+import products.Product;
+import products.SportingItem;
+
 public class MyShop {
 
 	// 쇼핑몰 이름
 	String title;
 	
 	// 기존 계정 셋팅(메인 함수에서 변경하기)
-	String[] existingUsers = new String[2];
+	public String[] existingUsers = new String[2];
+	private ArrayList<User> users = new ArrayList<>();
 	String newUser;
 	
 	Product[] electronicProducts = new Product[3];
@@ -22,8 +28,8 @@ public class MyShop {
 	// 유저가 고른 상품 번호
 	int productNo;
 	
-	// 입력이 중복막기 위함
-	Scanner scan = new Scanner(System.in);
+	// 하나의 스캐너 객체 (각각의 메소드에서 사용됨)
+	Scanner scanner = new Scanner(System.in);
 	
 	// 총 상품 금액
 	int total = 0;
@@ -37,20 +43,13 @@ public class MyShop {
 	}
 	
 	/**
-	 * 기존에 존재하던 계정 회원 등록하기
-	 * @param firstUser
-	 * @param secondUser
-	 * @param existingUsers
+	 * 기존 회원 등록하기
+	 * @param id
+	 * @param password
+	 * 
 	 */
-	public void setExistingUsers(String firstUser, String secondUser, String[] existingUsers) {
-		
-		UserList userList = new UserList();
-		
-		userList.setFirstUser(firstUser);
-		userList.setSecondUser(secondUser);
-		
-		existingUsers[0] = userList.getFirstUser();
-		existingUsers[1] = userList.getSecondUser();
+	public void setExistingUsers(String id, String password) {		
+		users.add(new User(id, password));		
 	}
 	
 	/**
@@ -63,7 +62,7 @@ public class MyShop {
 		System.out.println("#  기존에 저희 쇼핑몰을 방문해 보신적이 있으신가요? [y/n]  #");
 		System.out.printf("#  방문여부 : ");
 		
-		String isVisited = scan.next();
+		String isVisited = scanner.next();
 		
 		switch (isVisited) {
 			case "y": 
@@ -85,25 +84,19 @@ public class MyShop {
 	public void choiceAccount() {
 		
 		System.out.println("====================================================");
-		System.out.println("# 데이터 조회 결과, 두 개의 계정이 존재합니다. 원하시는 계정을 선택해주세요.");
-		System.out.println("#  회원[1] : " + existingUsers[0]);
-		System.out.println("#  회원[2] : " + existingUsers[1]);
+		System.out.println("# 데이터 조회 결과, "+User.getCount()+"의 계정이 존재합니다. 원하시는 계정을 선택해주세요.");
+		users.forEach(u -> System.out.println(u.toString()));
 		System.out.printf("#  선택 -> ");
 		
-		int userNo = scan.nextInt();
+		int userNo = scanner.nextInt();
 		
-		switch (userNo) {
-			case 1:
-				
-				firstUser(existingUsers[0]); break;
-			case 2:
-				
-				secondUser(existingUsers[1]); break;
-			default:
-				System.out.println("#  범위를 벗어났습니다. 프로그램을 종료합니다.");
-				System.exit(0); break;
-		}
-		
+		if(userNo<0 || userNo > User.getCount()) {
+			System.out.println("#  범위를 벗어났습니다. 프로그램을 종료합니다.");
+			System.exit(0);  //시스템 종료 
+		} else {
+			//유저넘버는 users인덱스 번호보다 1크다. 그래서 -1해야 인덱스 번호임
+			registeredUser(users.get(userNo-1).getId());
+		}				
 	}
 	
 	/**
@@ -113,71 +106,101 @@ public class MyShop {
 		
 		System.out.println("====================================================");
 		System.out.println("#  회원가입을 진행합니다.");
-		System.out.printf("#  성함을 입력해주세요 : ");
-		
-		newUser = scan.next();
-		
-		UserList userList = new UserList();
-		userList.setNewUser(newUser);
-		
-		System.out.println("====================================================");
-		System.out.println("#  " + userList.getNewUser() + "님 환영합니다. 원하시는 카테고리를 선택해주세요.");
-		
-		selectCategory();
-	}
-	
-	/**
-	 * 기존에 등록된 첫 번째 계정 불러오기
-	 * @param firstUser
-	 */
-	public void firstUser(String firstUser) {
-		
-		System.out.println("===================================================");
-		System.out.println("#  " + firstUser + "님 환영합니다. 원하시는 카테고리를 선택해주세요.");
-		
-		selectCategory();
-	}
-	
-	/**
-	 * 기존에 등록된 두 번째 계정 불러오기
-	 * @param secondUser
-	 */
-	public void secondUser(String secondUser) {
-		
-		System.out.println("===================================================");
-		System.out.println("#  " + secondUser + "님 환영합니다. 원하시는 카테고리를 선택해주세요.");
-		
-		selectCategory();
-	}
+				
+        String id = input(1);
+        String password = input(2);
 
+        System.out.println("계좌가 개설되었습니다!");
+        users.add(new User(id, password));
+		
+				
+		System.out.println("====================================================");
+		System.out.println("#  " + id + "님 환영합니다. 원하시는 카테고리를 선택해주세요.");
+		
+		selectCategory();
+	}
+    /**
+     * 입력한 문자열이 공백있는지 비번은 다시한번 확인
+     */
+    private String input(int mode) {
+    	
+        String result = null;
+
+        switch (mode) {
+            case 1:
+                while (true) {
+                    System.out.println("id를 입력하세요!");
+                    result = scanner.nextLine();
+
+                    if (result.trim().isEmpty()) {
+                        System.out.println("id는 공백을 허용하지 않습니다!");
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                while (true) {
+                    System.out.println("비밀번호를 입력하세요!");
+                    result = scanner.nextLine();
+
+                    System.out.println("비밀번호 확인을 입력하세요!");
+                    String passwordCheck = scanner.nextLine();
+
+                    if (result.trim().isEmpty() || passwordCheck.trim().isEmpty()) {
+                        System.out.println("비밀번호 또는 비밀번호 확인이 공백입니다!");
+                    } else if (!result.equals(passwordCheck)) {
+                        System.out.println("비밀번호와 비밀번호 확인이 일치하지 않습니다!");
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                while (true) {
+                    System.out.println("비밀번호를 입력하세요!");
+                    result = scanner.nextLine();
+
+                    if (result.trim().isEmpty()) {
+                        System.out.println("비밀번호가 공백입니다!");
+                    } else {
+                        break;
+                    }
+                }
+                break;
+        }
+
+        return result;
+    }
+	
+	/**
+	 * 기존에 등록된 계정 불러오기
+	 * @param userName
+	 */
+	public void registeredUser(String userId) {
+		
+		System.out.println("===================================================");
+		System.out.println("#  " + userId + "님 환영합니다. 원하시는 카테고리를 선택해주세요.");
+		
+		selectCategory();
+	}
+		
 	/**
 	 * 쇼핑몰 게임 실행 시, 상품 generate
 	 */
 	public void genProduct() {
 		
-		Electronic electronic = new Electronic("LG그램", 1500000, 5);
-		electronic.setCategoryName("전자기기");
-		electronicProducts[0] = electronic;
-		electronic = new Electronic("삼성 세탁기", 2000000, 2);
-		electronicProducts[1] = electronic;
-		electronic = new Electronic("에어팟 2세대", 150000, 3);
-		electronicProducts[2] = electronic;
+		electronicProducts[0] = new Electronic("전자기기","LG그램", 1500000, 5);
+		electronicProducts[1] = new Electronic("전자기기","삼성 세탁기", 2000000, 2);
+		electronicProducts[2] = new Electronic("전자기기","에어팟 2세대", 150000, 3);
 		
-		Cloth cloth = new Cloth("가을 코트", 250000, 2);
-		cloth.setCategoryName("의류");
-		clothProducts[0] = cloth;
-		cloth = new Cloth("가을 청자켓", 120000, 2);
-		clothProducts[1] = cloth;
-		cloth = new Cloth("퓨마 롱패딩", 470000, 2);
-		clothProducts[2] = cloth;
+		clothProducts[0] = new Cloth("의류", "가을 코트", 250000, 2);
+		clothProducts[1] = new Cloth("의류", "가을 청자켓", 120000, 2);
+		clothProducts[2] = new Cloth("의류", "퓨마 롱패딩", 470000, 2);
 		
-		SportingItem sportingItem = new SportingItem("나이키 손목밴드", 23000, 5);
-		sportingItem.setCategoryName("스포츠용품"); 
-		sportingProducts[0] = sportingItem;
-		sportingItem = new SportingItem("아디다스 축구화", 40000, 5);
-		sportingProducts[1] = sportingItem;
-		sportingItem = new SportingItem("유벤투스 유니폼", 100000, 5);
-		sportingProducts[2] = sportingItem;
+		sportingProducts[0] = new SportingItem("스포츠용품","나이키 손목밴드", 23000, 5);
+		 sportingProducts[1] = new SportingItem("스포츠용품","아디다스 축구화", 40000, 5);
+		sportingProducts[2] = new SportingItem("스포츠용품","유벤투스 유니폼", 100000, 5);
 	}
 	
 	/**
@@ -193,7 +216,7 @@ public class MyShop {
 		System.out.println("#  [0] : 장바구니 물품을 계산합니다.");
 		System.out.printf("#  선택 -> ");
 		
-		int categoryNo = scan.nextInt();
+		int categoryNo = scanner.nextInt();
 		
 		printProductList(categoryNo);
 	}
@@ -245,8 +268,8 @@ public class MyShop {
 			System.out.printf("#  선택하신 %s 제품은 재고가 모두 소진되었습니다.\n", product.getProductName());
 		}
 		
-		scan.nextLine();
-		scan.nextLine(); // 입력 버퍼 지우기
+		scanner.nextLine();
+		scanner.nextLine(); // 입력 버퍼 지우기
 		
 		selectCategory();
 	}
@@ -270,7 +293,7 @@ public class MyShop {
 		System.out.println("#  [0] : 장바구니 물품들을 계산합니다.");
 		System.out.printf("#  선택 -> ");
 		
-		productNo = scan.nextInt();
+		productNo = scanner.nextInt();
 		
 		System.out.println("==================================================================");
 		
@@ -306,7 +329,7 @@ public class MyShop {
 			System.out.println("#  [2] : CARD");
 			System.out.printf("#  선택 -> ");
 			
-			int payment = scan.nextInt();
+			int payment = scanner.nextInt();
 			
 			switch (payment) {
 				case 1:
@@ -349,7 +372,7 @@ public class MyShop {
 		System.out.println("=======================================");
 		System.out.printf("#  지불하실 현금을 입력해주세요 : ");
 		
-		int cash = scan.nextInt();
+		int cash = scanner.nextInt();
 		
 		if (cash >= total) {
 			
@@ -374,7 +397,7 @@ public class MyShop {
 		
 		System.out.printf("#  차액 지불하기 : ");
 		
-		int difference = scan.nextInt();
+		int difference = scanner.nextInt();
 		
 		if (difference == total - cash) {
 			
@@ -407,7 +430,7 @@ public class MyShop {
 		System.out.println("#  영수증 필요하신가요?(y/n)");
 		System.out.printf("#  선택 -> ");
 		
-		String isNeedRecipt = scan.next();
+		String isNeedRecipt = scanner.next();
 		
 		switch (isNeedRecipt) {
 		case "y": 
