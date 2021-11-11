@@ -1,4 +1,4 @@
-package product;
+package products;
 
 public class Seafood extends Product {
 	

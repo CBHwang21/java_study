@@ -1,4 +1,4 @@
-package product;
+package products;
 
 public abstract class Product {
 	protected String categoryName;
@@ -22,7 +22,7 @@ public abstract class Product {
 	}
 	
 	public String getProductName() {
-		return this.categoryName;
+		return this.productName;
 	}
 	
 	public int getPrice() {

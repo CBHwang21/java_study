@@ -1,4 +1,4 @@
-package product;
+package products;
 
 public class Instantfood extends Product {
 	

@@ -1,8 +1,8 @@
-package product;
+package products;
 
-public class Meateggs extends Product {
+public class Meat extends Product {
 	
-	public Meateggs(String categoryName, String productName, int pirce, int remainingStock) {
+	public Meat(String categoryName, String productName, int pirce, int remainingStock) {
 		super(categoryName, productName, pirce, remainingStock);
 	}
 }

@@ -1,14 +1,12 @@
 package event;
 
-import java.util.Random;
 
 public class Event {
-
-	public static void main(String[] args) {
+	public static int getRandomCoupon(){
 		// 랜덤함수이용
-		Random coupon = new Random();
-		for(int i=1; i<=10; i++); 
-		System.out.printf("뽑기결과 : %d원 할인쿠폰\n", (coupon.nextInt(10)+1)*1000);
+		int c = 1;
+		int coupon = (int)((Math.random()*10)+1)*1000;
+		return coupon;
 	}
 
 }
