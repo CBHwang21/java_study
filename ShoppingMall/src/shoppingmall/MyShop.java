@@ -194,7 +194,7 @@ public class MyShop {
 		electronicProducts[1] = new Electronic("전자기기","삼성 세탁기", 2000000, 2);
 		electronicProducts[2] = new Electronic("전자기기","에어팟 2세대", 150000, 3);
 		
-		clothProducts[0] = new Cloth("의류", "가을 코트", 250000, 2);
+		clothProducts[0] = new Cloth("의류", "가", 250000, 2);
 		clothProducts[1] = new Cloth("의류", "가을 청자켓", 120000, 2);
 		clothProducts[2] = new Cloth("의류", "퓨마 롱패딩", 470000, 2);
 		

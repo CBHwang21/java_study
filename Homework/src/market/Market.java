@@ -53,6 +53,7 @@ public class Market {
 	// 총 상품 금액
 	int total = 0;
 	
+	// 할인쿠폰
 	int random;
 	
 	/**
@@ -211,19 +212,19 @@ public class Market {
 	 */
 	public void genProduct() {
 		
-		meat[0] = new Meat("육류", "소고기(100g)", 5000, 10);
-		meat[1] = new Meat("육류", "돼지고기(100g)", 3000, 10);
-		meat[2] = new Meat("육류", "닭고기(100g)", 2000, 10);
+		meat[0] = new Meat("육류", "소고기", 5000, 10);
+		meat[1] = new Meat("육류", "돼지고기", 3000, 10);
+		meat[2] = new Meat("육류", "닭고기", 2000, 10);
 
-		vegetables[0] = new Vegetables("채소", "감자(1kg)", 4000, 5);
-		vegetables[1] = new Vegetables("채소", "당근(1kg)", 5000, 10);
-		vegetables[2] = new Vegetables("채소", "고구마(1kg)", 3000, 7);
+		vegetables[0] = new Vegetables("채소", "감자", 4000, 5);
+		vegetables[1] = new Vegetables("채소", "당근", 5000, 10);
+		vegetables[2] = new Vegetables("채소", "고구마", 3000, 7);
 
 		frozenfoods[0] = new Frozenfoods("냉동식품", "냉동만두", 6000, 15);
 		frozenfoods[1] = new Frozenfoods("냉동식품", "냉동피자", 5000, 10);
 		frozenfoods[2] = new Frozenfoods("냉동식품", "냉동튀김", 4000, 12);
 
-		dairyproducts[0] = new Dairyproducts("유제품", "우유(1L)", 2000, 14);
+		dairyproducts[0] = new Dairyproducts("유제품", "우유", 2000, 14);
 		dairyproducts[1] = new Dairyproducts("유제품", "치즈", 3000, 10);
 		dairyproducts[2] = new Dairyproducts("유제품", "요구르트", 2000, 8);
 
@@ -235,28 +236,28 @@ public class Market {
 		liquor[1] = new Liquor("주류", "맥주", 2000, 16);
 		liquor[2] = new Liquor("주류", "와인", 10000, 5);
 
-		waterbeverage[0] = new WaterBeverage("물, 음료", "생수(2L)", 2000, 15);
-		waterbeverage[1] = new WaterBeverage("물, 음료", "콜라(1.5L)", 3000, 17);
-		waterbeverage[2] = new WaterBeverage("물, 음료", "사이다(1.5L)", 3000, 12);
+		waterbeverage[0] = new WaterBeverage("물, 음료", "생수", 2000, 15);
+		waterbeverage[1] = new WaterBeverage("물, 음료", "콜라", 3000, 17);
+		waterbeverage[2] = new WaterBeverage("물, 음료", "사이다", 3000, 12);
 
-		grain[0] = new Grain("곡류", "쌀(1kg)", 10000, 8);
-		grain[1] = new Grain("곡류", "잡곡(1kg)", 80000, 13);
-		grain[2] = new Grain("곡류", "견과류(500g)", 4000, 10);
+		grain[0] = new Grain("곡류", "쌀 ", 10000, 8);
+		grain[1] = new Grain("곡류", "잡곡", 80000, 13);
+		grain[2] = new Grain("곡류", "견과류", 4000, 10);
 
 		seafood[0] = new Seafood("해산물", "생선", 4000, 15);
-		seafood[1] = new Seafood("해산물", "새우(500g)", 3000, 12);
-		seafood[2] = new Seafood("해산물", "오징어(500g)", 6000, 10);
+		seafood[1] = new Seafood("해산물", "새우", 3000, 12);
+		seafood[2] = new Seafood("해산물", "오징어", 6000, 10);
 
 		bakery[0] = new Bakery("제과", "과자", 3000, 20);
 		bakery[1] = new Bakery("제과", "빵", 4000, 10);
 		bakery[2] = new Bakery("제과", "초콜렛", 2000, 15);
 
-		instantfood[0] = new Instantfood("즉석식품", "라면", 5000, 20);
-		instantfood[1] = new Instantfood("즉석식품", "햇반", 2000, 15);
+		instantfood[0] = new Instantfood("즉석식품", "라면  ", 5000, 20);
+		instantfood[1] = new Instantfood("즉석식품", "햇반  ", 2000, 15);
 		instantfood[2] = new Instantfood("즉석식품", "3분요리", 2000, 5);
 
 		fruits[0] = new Fruits("과일", "사과", 3000, 15);
-		fruits[1] = new Fruits("과일", "배", 3000, 20);
+		fruits[1] = new Fruits("과일", "배 ", 3000, 20);
 		fruits[2] = new Fruits("과일", "오렌지", 4000, 10);
 	}
 	
@@ -280,7 +281,6 @@ public class Market {
 		System.out.println("┃ 12.즉석식품   ┃");
 		System.out.println("┃ 13.Event    ┃");
 		System.out.println("┗━━━━━━━━━━━━━┛");
-		System.out.println("오늘의 행사상품은 " + Sale.getRandomProduct() + "이고 " + Sale.getRandomDiscount() + "%를 할인해드립니다.");
 		System.out.println("#  [0] : 장바구니 물품을 계산합니다.");
 		System.out.printf("#  선택 -> ");
 		
@@ -439,8 +439,8 @@ public class Market {
 			switch(getdiscount) {
 				case "y":
 					System.out.println("할인쿠폰이 적용되어 " + random + "원 할인되었습니다.");
-					total = total - Event.getRandomCoupon();
-					break;
+					total = total - random;
+					printShoppingBasket(); break;
 				case "n":
 					printShoppingBasket(); break;
 				
@@ -474,19 +474,15 @@ public class Market {
 	/**
 	 * 체크아웃할 때, 지금까지 장바구니에 넣어놨던 상품 목록들 확인차 출력
 	 */
-	public void printShoppingBasket() {
+public void printShoppingBasket() {
 		
 		System.out.println("=========================================");
 		System.out.println("━━━━━━━━━━장바구니 목록━━━━━━━━━━━");
-		System.out.println("순번\t   상품\t\t      가격");
+		System.out.println("순번\t   상품\t\t    가격");
 		
 		for (int i = 0; i < cart.size(); i++) {
-			if(getProductName() = Sale.getRandomProduct()) {
-				System.out.printf(" %d   ┃\t%s   \t┃%d \n",i + 1 ,cart.get(i).getProductName(), cart.get(i).getPrice()*Sale.getRandomDiscount());
-			} else {
-				System.out.printf(" %d   ┃\t%s   \t┃%d \n",i + 1 ,cart.get(i).getProductName(), cart.get(i).getPrice());
-			}
 			
+			System.out.printf(" %d   ┃\t%s\t   \t┃%d \n",i + 1 ,cart.get(i).getProductName(), cart.get(i).getPrice());
 		}
 		
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -556,6 +552,7 @@ public class Market {
 	public void paymentOnCard() {
 		
 		System.out.println("=====================================");
+		System.out.println("#  결제가 완료되었습니다.");
 		System.out.println("#  영수증 필요하신가요?(y/n)");
 		System.out.printf("#  선택 -> ");
 		
