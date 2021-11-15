@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Sale {
 
 	public static int getRandomDiscount() {
-		int d = (int) (Math.random() * 10 + 1);
+		int d = (int)((Math.random()*10)+1)*100;
 		return d;
 	}
 
