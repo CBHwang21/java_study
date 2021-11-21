@@ -7,3 +7,7 @@
 /URLFrameEx1.class
 /EchoServer.class
 /EchoServer$EchoThread.class
+/EchoFrameClient.class
+/ChatServer1.class
+/ChatServer1$ClientThhread1.class
+/ChatServer1$ClientThread1.class
