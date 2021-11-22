@@ -2,6 +2,7 @@ package ch14;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Label;
 import java.awt.Panel;
 import java.awt.TextArea;
@@ -12,10 +13,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.SocketAddress;
 
-public class EchoFrameClient extends MFrame
-implements ActionListener{
+public class ChatClient1 extends MFrame
+implements ActionListener, Runnable{
 	
 	Button btn1, btn2;
 	TextField tf1, tf2;
@@ -23,17 +23,20 @@ implements ActionListener{
 	Panel p1, p2;
 	BufferedReader in;
 	PrintWriter out;
-	int port = 8000;
+	int port = 8001;
+	String id;
 	
-	public EchoFrameClient() {
+	public ChatClient1() {
 		super(350,400);
-		setTitle("EchoFrameClient");
+		setTitle("MyChat 1.0");
 		p1 = new Panel();
+		p1.setBackground(new Color(100,200,100));
 		p1.add(new Label("HOST ",Label.CENTER));
 		p1.add(tf1 = new TextField("127.0.0.1",25));
 		p1.add(btn1 = new Button("Connect"));
 		
 		p2 = new Panel();
+		p2.setBackground(new Color(100,200,100));
 		p2.add(new Label("CHAT ",Label.CENTER));
 		p2.add(tf2 = new TextField("",25));
 		p2.add(btn2 = new Button("SEND"));	
@@ -46,31 +49,47 @@ implements ActionListener{
 		add(p1,BorderLayout.NORTH);
 		add(ta=new TextArea());
 		add(p2,BorderLayout.SOUTH);
-		validate();//갱신
+		validate();	// 갱신
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		// 이벤트를 발생시킨 이벤트소스를(컴포넌트) 리턴
 		Object obj = e.getSource();
 		if(obj==tf1||obj==btn1) {
+			// 서버에 연결을 시도
 			connect(tf1.getText().trim());
-			//connection 성공후에 tf1, btn1은 비활성화
+			// tf1, btn1은 비활성화
 			tf1.setEnabled(false);
 			btn1.setEnabled(false);
-			tf2.requestFocus();
 		}else if(obj==tf2||obj==btn2) {
-			try {
-				//tf2에 입력된 문자열을 서버로 보낸다.
-				out.println(tf2.getText());
-				//서버에 보낸 문자열을 받아서 ta에 붙힌다.
-				ta.append(in.readLine()+"\n");
-				tf2.setText("");
-				tf2.requestFocus();
-			} catch (Exception e2) {
-				e2.printStackTrace();
+			if(id==null) {
+				id = tf2.getText();
+				setTitle(getTitle() +"["+id+"]");
+				ta.setText("채팅을 시작합니다.\n");
 			}
+			// tf2에 입력된 text를 서버로 보낸다.
+			out.println(tf2.getText());
+			tf2.setText("");
+			tf2.requestFocus();
 		}
-	}
+	}//actionPerformed
+	
+	@Override
+	public void run() {
+		//서버로부터 전송되는 메세지를 ta에 추가
+		try {
+			while(true) {
+			ta.append(in.readLine()+"\n");
+			tf2.requestFocus();
+			}
+		} catch (Exception e) {
+			System.out.println("Error in run");
+			e.printStackTrace();
+			// 비정상적인 종료
+			System.exit(1);
+		}
+	}//run
 	
 	public void connect(String host){
 		try {
@@ -80,21 +99,15 @@ implements ActionListener{
 							sock.getInputStream()));
 			out = new PrintWriter(
 					sock.getOutputStream(),true/*auto flush*/);
-			//서버접속시 최초 받는 메세지를 출력
-			//Hello Enter BYB to exit
-			ta.append(in.readLine()+"\n");
-			tf2.requestFocus();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// Thread 시작하기
+		Thread t = new Thread(this);
+		t.start();
 	}
 	
 	public static void main(String[] args) {
-		new EchoFrameClient();
+		new ChatClient1();
 	}
 }
-
-
-
-
-

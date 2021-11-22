@@ -4,26 +4,32 @@ import java.net.InetAddress;
 
 public class InetAddressEx1 {
 	public static void main(String[] args) {
-		// java.net, java.io ëŒ€ë¶€ë¶„ì˜ í´ë˜ìŠ¤ ë° ë©”ì†Œë“œ ì˜ˆì™¸ì²˜ë¦¬
+		//java.net, java.io ??ë¶?ë¶„ì˜ ?´?˜?Š¤ ë°? ë©”ì†Œ?“œ ?˜ˆ?™¸ì²˜ë¦¬ 
 		try {
-			// ë„ë©”ì¸ìœ¼ë¡œ ip ì¶œë ¥í•˜ëŠ” í´ë˜ìŠ¤
+			//?„ë©”ì¸?œ¼ë¡? ip ì¶œë ¥?•˜?Š” ?´?˜?Š¤
 			InetAddress add = InetAddress.getLocalHost();
-			System.out.println("ë¡œì»¬ì»´í“¨í„° ì´ë¦„ : " + add.getHostName());
-			System.out.println("ë¡œì»¬ì»´í“¨í„° ip : " + add.getHostAddress());
+			System.out.println("ë¡œì»¬ì»´í“¨?„°?´ë¦? : " + add.getHostName());
+			System.out.println("ë¡œì»¬ì»´í“¨?„°ip : " + add.getHostAddress());
 			add = InetAddress.getByName("auction.co.kr");
-			System.out.println("ì˜¥ì…˜ : " + add.getHostAddress());
+			System.out.println("?˜¥?…˜: " + add.getHostAddress());
 			InetAddress adds[] = InetAddress.getAllByName("naver.com");
-			// ë°°ì—´ ë°‘ì— í•­ìƒ forë¬¸ì´ ìˆë‹¤.
-			System.out.println("------------------");
-			System.out.println("ë„¤ì´ë²„");
+			//ë°°ì—´ ë°‘ì— ?•­?ƒ forë¬¸ì´ ?ˆ?‹¤.
+			System.out.println("-------------------");
+			System.out.println("?„¤?´ë²?");
 			for (int i = 0; i < adds.length; i++) {
 				System.out.println(adds[i]);
 			}
 		} catch (Exception e) {
-			// ì˜ˆì™¸ì˜ íˆìŠ¤í† ë¦¬ê¹Œì§€ ì¶œë ¥ë˜ëŠ” ë©”ì†Œë“œ
+			//?˜ˆ?™¸?˜ ?ˆ?Š¤?† ë¦¬ê¹Œì§? ì¶œë ¥?˜?Š” ë©”ì†Œ?“œ
 			e.printStackTrace();
 		}
-
 	}
-
 }
+
+
+
+
+
+
+
+

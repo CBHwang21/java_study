@@ -22,7 +22,7 @@ public class URLFrameEx1 extends MFrame implements ActionListener {
 		super(500, 500);
 		setTitle("ViewHost");
 		Panel p = new Panel();
-		p.add(tf = new TextField("", 40));
+		p.add(tf = new TextField("http://", 40));
 		p.add(connect = new Button("connect"));
 		p.add(save = new Button("save"));
 		ta = new TextArea();
@@ -38,23 +38,23 @@ public class URLFrameEx1 extends MFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object obj = e.getSource();
 		String host = tf.getText();
-		if(obj==tf || obj==connect) {
+		if(obj==tf||obj==connect) {
 			ta.setText("");
 			save.setEnabled(true);
 			connectHost(host);
-		} else if(obj==save) {
+		}else if(obj==save) {
 			createFile(tf.getText(), ta.getText());
 			save.setEnabled(false);
 			tf.setText("http://");
 			ta.setText("");
 			ta.append("저장하였습니다.");
 			tf.requestFocus();
-		}		
+		}
 	}
-
+	
 	public void createFile(String file, String content) {
 		try {
-			FileWriter  fw = new FileWriter("ch14/" + file);
+			FileWriter fw = new FileWriter("ch14/"+file);
 			fw.write(content);
 			fw.close();
 		} catch (Exception e) {
@@ -62,26 +62,36 @@ public class URLFrameEx1 extends MFrame implements ActionListener {
 		}
 	}
 	
-	// 독립적인 기능은 최대한 세분화 시켜야 한다.
+	//독립적인 기능은 최대한 세부한 시켜야 한
 	public void connectHost(String host) {
 		try {
 			URL url = new URL(host);
-			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream(),"UTF-8"));
+			BufferedReader br = 
+					new BufferedReader(new InputStreamReader(
+							url.openStream(),"UTF-8"));
 			String line = "";
 			while(true) {
 				line = br.readLine();
-				if(line==null)
+				if(line==null) 
 					break;
-				System.out.println(line+"\n");
+				ta.append(line+"\n");
 			}
 			br.close();
 		} catch (Exception e) {
-			ta.append("해당되는 호스트가 없습니다.");	
+			ta.append("해당되는 호스트가 없습니다.");
 			//e.printStackTrace();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		URLFrameEx1 ex = new URLFrameEx1();
 	}
 }
+
+
+
+
+
+
+
+

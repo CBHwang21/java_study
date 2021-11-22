@@ -40,28 +40,34 @@ implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		Object obj = e.getSource();
-		if(obj==lookup || obj==tf) {
+		if(obj==lookup||obj==tf) {
 			String name = tf.getText();
 			try {
 				intAddr = InetAddress.getByName(name);
 				String add = intAddr.getHostName();
 				String ip = intAddr.getHostAddress();
-				ta.append(" "+add+"\n");
-				ta.append(" "+ip+"\n");
-			} catch (Exception e2) {
-				ta.append("[" + name + "]\n");
-				ta.append("해당 호스트가 없습니다.");
+				ta.append("  " + add+"\n");
+				ta.append("  " + ip+"\n");
+			} catch (UnknownHostException e2) {
+				ta.append(" ["+name+"]\n");
+				ta.append(" 해당 호스트가 없습니다.\n");
 				e2.printStackTrace();
 			}
 			tf.setText("");
 			tf.requestFocus();
 		}
+		
 	}
 	
 	public static void main(String[] args) {
 		new InetAddressFrameEx1();
 	}
 }
+
+
+
+
+
 
 
 
